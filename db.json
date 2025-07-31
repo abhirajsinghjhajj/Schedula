@@ -15,32 +15,13 @@
       "consultationFee": 150,
       "videoConsultationFee": 100,
       "availability": {
-        "clinic": [
-          "Monday",
-          "Wednesday",
-          "Friday"
-        ],
-        "online": [
-          "Tuesday",
-          "Thursday",
-          "Saturday"
-        ]
+        "clinic": ["Monday", "Wednesday", "Friday"],
+        "online": ["Tuesday", "Thursday", "Saturday"]
       },
-      "timeSlots": [
-        "09:00",
-        "10:00",
-        "11:00",
-        "14:00",
-        "15:00",
-        "16:00"
-      ],
-      "image": "https://i.pravatar.cc/200?u=sarah.johnson@email.com",
+      "timeSlots": ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"],
+      "image": "https://i.pinimg.com/736x/d1/ff/21/d1ff21ed00b54e8dd8db0d16105f2602.jpg",
       "about": "Experienced cardiologist specializing in heart disease prevention and treatment.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
       "id": "2",
@@ -57,32 +38,13 @@
       "consultationFee": 120,
       "videoConsultationFee": 80,
       "availability": {
-        "clinic": [
-          "Monday",
-          "Tuesday",
-          "Thursday"
-        ],
-        "online": [
-          "Wednesday",
-          "Friday",
-          "Saturday"
-        ]
+        "clinic": ["Monday", "Tuesday", "Thursday"],
+        "online": ["Wednesday", "Friday", "Saturday"]
       },
-      "timeSlots": [
-        "08:00",
-        "09:00",
-        "10:00",
-        "13:00",
-        "14:00",
-        "15:00"
-      ],
-      "image": "https://i.pravatar.cc/200?u=michael.chen@email.com",
+      "timeSlots": ["08:00", "09:00", "10:00", "13:00", "14:00", "15:00"],
+      "image": "https://i.pravatar.cc/400?img=44",
       "about": "Board-certified dermatologist with expertise in skin conditions and cosmetic procedures.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
       "id": "3",
@@ -99,30 +61,13 @@
       "consultationFee": 200,
       "videoConsultationFee": 150,
       "availability": {
-        "clinic": [
-          "Tuesday",
-          "Wednesday",
-          "Friday"
-        ],
-        "online": [
-          "Monday",
-          "Thursday",
-          "Saturday"
-        ]
+        "clinic": ["Tuesday", "Wednesday", "Friday"],
+        "online": ["Monday", "Thursday", "Saturday"]
       },
-      "timeSlots": [
-        "09:00",
-        "10:00",
-        "11:00",
-        "14:00",
-        "15:00"
-      ],
-      "image": "https://i.pravatar.cc/200?u=emily.rodriguez@email.com",
+      "timeSlots": ["09:00", "10:00", "11:00", "14:00", "15:00"],
+      "image": "https://config-storage.fotogram.cloud/landing/alisa_jpg/ceo/2.jpg",
       "about": "Neurologist specializing in brain disorders and neurological conditions.",
-      "consultationType": [
-        "clinic",
-        "video"
-      ]
+      "consultationType": ["clinic", "video"]
     },
     {
       "id": "4",
@@ -139,31 +84,13 @@
       "consultationFee": 180,
       "videoConsultationFee": 120,
       "availability": {
-        "clinic": [
-          "Monday",
-          "Wednesday",
-          "Thursday"
-        ],
-        "online": [
-          "Tuesday",
-          "Friday",
-          "Saturday"
-        ]
+        "clinic": ["Monday", "Wednesday", "Thursday"],
+        "online": ["Tuesday", "Friday", "Saturday"]
       },
-      "timeSlots": [
-        "08:00",
-        "09:00",
-        "10:00",
-        "13:00",
-        "14:00"
-      ],
+      "timeSlots": ["08:00", "09:00", "10:00", "13:00", "14:00"],
       "image": "https://i.pravatar.cc/200?u=james.wilson@email.com",
       "about": "Orthopedic surgeon specializing in joint replacement and sports medicine.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
       "id": "5",
@@ -180,32 +107,13 @@
       "consultationFee": 100,
       "videoConsultationFee": 70,
       "availability": {
-        "clinic": [
-          "Monday",
-          "Tuesday",
-          "Wednesday"
-        ],
-        "online": [
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ]
+        "clinic": ["Monday", "Tuesday", "Wednesday"],
+        "online": ["Thursday", "Friday", "Saturday"]
       },
-      "timeSlots": [
-        "09:00",
-        "10:00",
-        "11:00",
-        "14:00",
-        "15:00",
-        "16:00"
-      ],
+      "timeSlots": ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"],
       "image": "https://i.pravatar.cc/200?u=lisa.thompson@email.com",
       "about": "Pediatrician dedicated to providing comprehensive care for children and adolescents.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
       "id": "6",
@@ -222,31 +130,13 @@
       "consultationFee": 160,
       "videoConsultationFee": 120,
       "availability": {
-        "clinic": [
-          "Tuesday",
-          "Thursday",
-          "Friday"
-        ],
-        "online": [
-          "Monday",
-          "Wednesday",
-          "Saturday"
-        ]
+        "clinic": ["Tuesday", "Thursday", "Friday"],
+        "online": ["Monday", "Wednesday", "Saturday"]
       },
-      "timeSlots": [
-        "10:00",
-        "11:00",
-        "14:00",
-        "15:00",
-        "16:00"
-      ],
-      "image": "https://i.pravatar.cc/200?u=robert.kim@email.com",
+      "timeSlots": ["10:00", "11:00", "14:00", "15:00", "16:00"],
+      "image": "https://www.gravatar.com/avatar/2c7d99fe281ecd3bcd65ab915bac6dd5?s=250",
       "about": "Psychiatrist specializing in mental health disorders and therapy.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
       "id": "7",
@@ -263,55 +153,59 @@
       "consultationFee": 90,
       "videoConsultationFee": 60,
       "availability": {
-        "clinic": [
-          "Monday",
-          "Wednesday",
-          "Friday"
-        ],
-        "online": [
-          "Tuesday",
-          "Thursday",
-          "Saturday"
-        ]
+        "clinic": ["Monday", "Wednesday", "Friday"],
+        "online": ["Tuesday", "Thursday", "Saturday"]
       },
-      "timeSlots": [
-        "08:00",
-        "09:00",
-        "10:00",
-        "13:00",
-        "14:00",
-        "15:00"
-      ],
+      "timeSlots": ["08:00", "09:00", "10:00", "13:00", "14:00", "15:00"],
       "image": "https://i.pravatar.cc/200?u=amanda.davis@email.com",
       "about": "General practitioner providing comprehensive primary care services.",
-      "consultationType": [
-        "clinic",
-        "video",
-        "call"
-      ]
+      "consultationType": ["clinic", "video", "call"]
     },
     {
-      "id": "1753893330702",
-      "name": "Abhiraj Singh Jhajj",
-      "email": "Jhajjabhi@727",
-      "phone": "1234566789",
-      "password": "1234567",
-      "specialty": "Cardiology",
-      "qualifications": "MBBS",
-      "experience": "2",
-      "clinicAddress": "Test Address",
-      "image": "https://i.pravatar.cc/200?u=Jhajjabhi@727"
+      "id": "8",
+      "name": "Dr. David Lee",
+      "email": "david.lee@email.com",
+      "password": "doctor123",
+      "phone": "+1-555-0108",
+      "specialty": "Gastroenterology",
+      "qualifications": "MD, AGAF",
+      "experience": "17 years",
+      "clinicAddress": "Digestive Health Institute, 246 Gut St, Houston",
+      "rating": 4.8,
+      "reviewCount": 172,
+      "consultationFee": 170,
+      "videoConsultationFee": 130,
+      "availability": {
+        "clinic": ["Monday", "Thursday", "Friday"],
+        "online": ["Tuesday", "Wednesday", "Saturday"]
+      },
+      "timeSlots": ["09:00", "10:00", "11:30", "14:00", "15:30", "16:30"],
+      "image": "https://th.bing.com/th/id/OIP.yuhOzdg0Pgyg9246nGqVgAHaE8?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "about": "Expert in digestive diseases and liver conditions, providing compassionate patient care.",
+      "consultationType": ["clinic", "video", "call"]
     },
     {
-      "id": "1753894709649",
-      "name": "123",
-      "email": "123@gmail.com",
-      "phone": "1234567899",
-      "password": "1234567",
-      "specialty": "",
-      "qualifications": "",
-      "experience": "",
-      "clinicAddress": ""
+      "id": "9",
+      "name": "Dr. Brian Miller",
+      "email": "brian.miller@email.com",
+      "password": "doctor123",
+      "phone": "+1-555-0109",
+      "specialty": "ENT Specialist",
+      "qualifications": "MD, FACS",
+      "experience": "11 years",
+      "clinicAddress": "Ear, Nose & Throat Associates, 531 Sound Way, San Francisco",
+      "rating": 4.7,
+      "reviewCount": 112,
+      "consultationFee": 140,
+      "videoConsultationFee": 90,
+      "availability": {
+        "clinic": ["Tuesday", "Wednesday", "Friday"],
+        "online": ["Monday", "Thursday"]
+      },
+      "timeSlots": ["08:30", "09:30", "10:30", "13:30", "14:30"],
+      "image": "https://tse1.mm.bing.net/th/id/OIP.U1eJzW5TwTDggYvu5v0fFAHaHa?w=600&h=600&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "about": "Specializing in the treatment of ear, nose, and throat disorders in both adults and children.",
+      "consultationType": ["clinic", "video"]
     }
   ],
   "patients": [
@@ -326,6 +220,14 @@
       "id": "1753907537020",
       "name": "123",
       "email": "123@123",
+      "phone": "1234567899",
+      "password": "1234567",
+      "role": "patient"
+    },
+    {
+      "id": "1753957774383",
+      "name": "123456",
+      "email": "123@gmail.com",
       "phone": "1234567899",
       "password": "1234567",
       "role": "patient"
