@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DocBook - Doctor Appointment Booking App
 
 A full-stack web application for booking doctor appointments with role-based authentication for doctors and patients.
@@ -155,3 +156,6 @@ For the mock API, you'll need to deploy JSON Server separately or replace it wit
 ## License
 
 This project is licensed under the MIT License.
+=======
+# Schedula
+>>>>>>> e46ea27a10a3930910800e82a6d0eabe953b57c6
