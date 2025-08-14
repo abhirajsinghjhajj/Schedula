@@ -24,13 +24,45 @@ export default function DoctorDashboard() {
   });
   const [isLoading, setIsLoading] = useState(true);
 
-  // ... (useEffect and loadAppointments logic is correct, no changes needed)
   useEffect(() => {
-    //...
-  }, [user]);
+    if (!user?.id) return
+    const refresh = () => {
+      void loadAppointments()
+    }
+    // initial
+    refresh()
+    // real-time updates from other tabs/components
+    const handler = (e: any) => {
+      if (e?.detail?.doctorId === user.id) refresh()
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener("appointments:updated", handler)
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("appointments:updated", handler)
+      }
+    }
+  }, [user?.id])
 
   const loadAppointments = async () => {
-    //...
+    if (!user?.id) return
+    try {
+      setIsLoading(true)
+      const data = await appointmentsAPI.getByDoctorId(user.id)
+      setAppointments(data)
+      const totals = {
+        total: data.length,
+        pending: data.filter(a => a.status === "pending").length,
+        confirmed: data.filter(a => a.status === "confirmed").length,
+        completed: data.filter(a => a.status === "completed").length,
+      }
+      setStats(totals)
+    } catch (e) {
+      // ignore toast here to keep dashboard clean
+    } finally {
+      setIsLoading(false)
+    }
   };
 
   const todayAppointments = appointments.filter(

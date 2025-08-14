@@ -1,7 +1,7 @@
 
-# Schedula - Doctor Appointment Booking App
+# Schedula – Modern Doctor Appointment Platform
 
-A full-stack web application for booking doctor appointments with role-based authentication for doctors and patients, featuring prescription management and medical history tracking.
+Schedula is a modern, full‑stack doctor appointment platform built with Next.js 14. Patients can discover doctors and book appointments (clinic, video, or phone), while doctors manage schedules, prescriptions, and patient histories. The app ships with a mock API layer via Next.js API routes backed by a local JSON dataset, so it runs instantly without external services.
 
 ## ✨ Features
 
@@ -11,25 +11,24 @@ A full-stack web application for booking doctor appointments with role-based aut
 - **Appointment History**: View and manage your past and upcoming appointments.
 - **Profile Management**: Easily update and manage your personal information.
 
-### For Doctors
-- Dashboard with appointment statistics
-- Manage professional profile
-- View and manage patient appointments
-- Confirm/cancel appointments
-- **Prescription Management**: Create, edit, and delete prescriptions for patients
-- **Patient Medical History**: View complete patient medical records including past appointments, diagnoses, and prescriptions
-- **Medical Records**: Track patient diagnoses, symptoms, and treatments
+### 👨‍⚕️ For Doctors
+- Real‑time dashboard with appointment statistics (pending, confirmed, completed)
+- Manage professional profile and availability
+- View and manage patient appointments (confirm/cancel/complete)
+- **Prescription Management**: Create, edit, delete prescriptions after visits
+- **Patient Medical History**: Full, chronological record (appointments, diagnoses, prescriptions)
+- Optional: export/download history
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 with TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS (Dark theme enabled by default)
 - **UI Components**: shadcn/ui
 - **State Management**: React Context API
 - **Mock Backend**: JSON Server
 - **Authentication**: Role-based with localStorage
 
-## Quick Setup Guide
+## 🚀 Quick Start
 
 1. **Install dependencies**:
    ```bash
@@ -41,7 +40,7 @@ A full-stack web application for booking doctor appointments with role-based aut
    npm run dev
    ```
 
-3. **Open the app**: Go to http://localhost:3000
+3. **Open the app**: Go to http://localhost:3000 (Dark theme is default)
 
 ## Getting Started
 
@@ -101,7 +100,7 @@ A full-stack web application for booking doctor appointments with role-based aut
 └── db.json              # Mock database
 ```
 
-## API Endpoints
+## API Endpoints (Mock)
 
 The API runs on `http://localhost:3000/api` with the following endpoints:
 
@@ -118,6 +117,11 @@ The API runs on `http://localhost:3000/api` with the following endpoints:
 - `DELETE /prescriptions/:id` - Delete prescription
 
 ### Medical History
+  
+### Doctors & Patients
+- `GET /doctors` – List doctors
+- `GET /doctors/:id` – Get doctor by ID
+- `GET /patients` – List patients
 - `GET /medical-history` - Get medical history (with optional filters)
 - `POST /medical-history` - Create medical record
 
@@ -136,13 +140,13 @@ The API runs on `http://localhost:3000/api` with the following endpoints:
 - Tabbed interface for easy navigation
 
 ✅ **Enhanced Doctor Dashboard**
+- Real‑time updates when appointments are confirmed/cancelled/completed
 - Quick access to appointments and prescriptions
-- Improved navigation and user experience
 
 ## Features Previously Implemented
 
 ✅ Role-based authentication (Doctor/Patient)  
-✅ Responsive design with dark theme  
+✅ Responsive design with dark theme (default)  
 ✅ Doctor search and filtering  
 ✅ Appointment booking system  
 ✅ Profile management  
