@@ -3,13 +3,13 @@
 
 A full-stack web application for booking doctor appointments with role-based authentication for doctors and patients, featuring prescription management and medical history tracking.
 
-## Features
+## ✨ Features
 
-### For Patients
-- Search and book appointments with doctors
-- Filter doctors by specialty
-- View appointment history
-- Manage profile information
+### 👤 For Patients
+- **Advanced Search**: Effortlessly find doctors and filter them by specialty.
+- **Seamless Booking**: Book appointments in just a few clicks.
+- **Appointment History**: View and manage your past and upcoming appointments.
+- **Profile Management**: Easily update and manage your personal information.
 
 ### For Doctors
 - Dashboard with appointment statistics
@@ -20,7 +20,7 @@ A full-stack web application for booking doctor appointments with role-based aut
 - **Patient Medical History**: View complete patient medical records including past appointments, diagnoses, and prescriptions
 - **Medical Records**: Track patient diagnoses, symptoms, and treatments
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14 with TypeScript
 - **Styling**: Tailwind CSS
