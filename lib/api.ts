@@ -261,6 +261,27 @@ export const appointmentsAPI = {
       throw error;
     }
   },
+
+  async updateDateTime(id: string, date: string, time: string): Promise<Appointment> {
+    try {
+      const response = await fetch(`${API_BASE}/appointments/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ date, time }),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to update appointment date/time");
+      }
+      return response.json();
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes("fetch")) {
+        throw new Error("Cannot connect to server. Please check your internet connection.");
+      }
+      throw error;
+    }
+  },
   
   cancelAppointment: async (appointmentId: string): Promise<void> => {
     const response = await fetch(`${API_BASE}/appointments/${appointmentId}`, {

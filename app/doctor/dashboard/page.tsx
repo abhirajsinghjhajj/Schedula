@@ -151,7 +151,7 @@ export default function DoctorDashboard() {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <Link href="/doctor/appointments">
               <Card className="hover:shadow-lg transition-shadow cursor-pointer">
                 <CardHeader>
@@ -160,6 +160,17 @@ export default function DoctorDashboard() {
                     Manage Appointments
                   </CardTitle>
                   <CardDescription>View and manage all patient appointments</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/doctor/calendar">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Calendar className="h-5 w-5 mr-2" />
+                    Calendar View
+                  </CardTitle>
+                  <CardDescription>Drag & drop appointment management</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
