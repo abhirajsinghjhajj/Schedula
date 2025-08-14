@@ -19,7 +19,7 @@
         "online": ["Tuesday", "Thursday", "Saturday"]
       },
       "timeSlots": ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"],
-      "image": "https://i.pinimg.com/736x/d1/ff/21/d1ff21ed00b54e8dd8db0d16105f2602.jpg",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.KNh-SRFH_Aod1To-A7D-nAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
       "about": "Experienced cardiologist specializing in heart disease prevention and treatment.",
       "consultationType": ["clinic", "video", "call"]
     },
@@ -394,6 +394,88 @@
       "consultationType": "clinic",
       "symptoms": "",
       "fee": 180
+    }
+  ],
+  "prescriptions": [
+    {
+      "id": "1",
+      "appointmentId": "1753641399250",
+      "doctorId": "1",
+      "patientId": "1",
+      "doctorName": "Dr. Sarah Johnson",
+      "patientName": "John Doe",
+      "medicineName": "Lisinopril",
+      "dosage": "10mg",
+      "duration": "30 days",
+      "instructions": "Take once daily in the morning",
+      "notes": "For blood pressure management",
+      "prescribedDate": "2025-01-15",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "appointmentId": "1753641445626",
+      "doctorId": "1",
+      "patientId": "1",
+      "doctorName": "Dr. Sarah Johnson",
+      "patientName": "John Doe",
+      "medicineName": "Atorvastatin",
+      "dosage": "20mg",
+      "duration": "30 days",
+      "instructions": "Take once daily in the evening",
+      "notes": "For cholesterol management",
+      "prescribedDate": "2025-01-20",
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "appointmentId": "1753671149792",
+      "doctorId": "4",
+      "patientId": "1",
+      "doctorName": "Dr. James Wilson",
+      "patientName": "John Doe",
+      "medicineName": "Ibuprofen",
+      "dosage": "400mg",
+      "duration": "7 days",
+      "instructions": "Take as needed for pain, maximum 3 times daily",
+      "notes": "For knee pain relief",
+      "prescribedDate": "2025-01-25",
+      "status": "completed"
+    }
+  ],
+  "medicalHistory": [
+    {
+      "id": "1",
+      "patientId": "1",
+      "appointmentId": "1753641399250",
+      "diagnosis": "Hypertension",
+      "symptoms": "High blood pressure readings, occasional headaches",
+      "treatment": "Prescribed Lisinopril 10mg daily",
+      "date": "2025-01-15",
+      "doctorName": "Dr. Sarah Johnson",
+      "specialty": "Cardiology"
+    },
+    {
+      "id": "2",
+      "patientId": "1",
+      "appointmentId": "1753641445626",
+      "diagnosis": "Hyperlipidemia",
+      "symptoms": "Elevated cholesterol levels",
+      "treatment": "Prescribed Atorvastatin 20mg daily",
+      "date": "2025-01-20",
+      "doctorName": "Dr. Sarah Johnson",
+      "specialty": "Cardiology"
+    },
+    {
+      "id": "3",
+      "patientId": "1",
+      "appointmentId": "1753671149792",
+      "diagnosis": "Knee pain due to overuse",
+      "symptoms": "Pain in right knee, difficulty walking",
+      "treatment": "Prescribed Ibuprofen for pain relief, recommended rest",
+      "date": "2025-01-25",
+      "doctorName": "Dr. James Wilson",
+      "specialty": "Orthopedics"
     }
   ]
 }

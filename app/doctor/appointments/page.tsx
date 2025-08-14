@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { appointmentsAPI, type Appointment } from "@/lib/api";
-import { Calendar, Clock, User, CheckCircle, XCircle } from "lucide-react";
+import { Calendar, Clock, User, CheckCircle, XCircle, FileText } from "lucide-react";
+import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { ModernFooter } from "@/components/ModernFooter";
 
@@ -160,6 +161,18 @@ export default function DoctorAppointmentsPage() {
                                 Mark as Completed
                               </Button>
                             )}
+
+                            {/* View Medical History Button */}
+                            <Link href={`/doctor/medical-history/${appointment.patientId}`}>
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="w-full"
+                              >
+                                <FileText className="w-4 h-4 mr-2" />
+                                View Medical History
+                              </Button>
+                            </Link>
                           </div>
                         </CardContent>
                       </Card>

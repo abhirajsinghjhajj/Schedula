@@ -6,7 +6,8 @@ import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { Navbar } from "@/components/Navbar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { appointmentsAPI, type Appointment } from "@/lib/api";
-import { Calendar, Users, Clock, TrendingUp } from "lucide-react";
+import { Calendar, Users, Clock, TrendingUp, Pill } from "lucide-react";
+import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -115,6 +116,32 @@ export default function DoctorDashboard() {
                 <p className="text-xs text-muted-foreground">This month</p>
               </CardContent>
             </Card>
+          </div>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <Link href="/doctor/appointments">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Calendar className="h-5 w-5 mr-2" />
+                    Manage Appointments
+                  </CardTitle>
+                  <CardDescription>View and manage all patient appointments</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+            <Link href="/doctor/prescriptions">
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Pill className="h-5 w-5 mr-2" />
+                    Prescriptions
+                  </CardTitle>
+                  <CardDescription>Create and manage patient prescriptions</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
           </div>
 
           {/* Today's Appointments */}

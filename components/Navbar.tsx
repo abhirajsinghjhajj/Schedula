@@ -2,7 +2,7 @@
 
 import { useAuth } from "@/contexts/AuthContext"
 import { Button } from "@/components/ui/button"
-import { LogOut, User, Calendar, Home } from "lucide-react"
+import { LogOut, User, Calendar, Home, Pill } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -75,6 +75,12 @@ export function Navbar() {
                   <Button variant="ghost" size="sm">
                     <Calendar className="w-4 h-4 mr-2" />
                     Appointments
+                  </Button>
+                </Link>
+                <Link href="/doctor/prescriptions">
+                  <Button variant="ghost" size="sm">
+                    <Pill className="w-4 h-4 mr-2" />
+                    Prescriptions
                   </Button>
                 </Link>
               </>
