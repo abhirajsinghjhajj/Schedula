@@ -1,5 +1,27 @@
 import { NextResponse } from 'next/server';
-import db from '@/db.json'; // Adjust the path
+import db from '../../../db.json';
+
+export async function GET(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const doctorId = searchParams.get('doctorId');
+    const patientId = searchParams.get('patientId');
+
+    let appointments = db.appointments;
+
+    if (doctorId) {
+      appointments = appointments.filter(apt => apt.doctorId === doctorId);
+    }
+
+    if (patientId) {
+      appointments = appointments.filter(apt => apt.patientId === patientId);
+    }
+
+    return NextResponse.json(appointments);
+  } catch (error) {
+    return NextResponse.json({ message: 'Error fetching appointments' }, { status: 500 });
+  }
+}
 
 export async function POST(request: Request) {
   try {

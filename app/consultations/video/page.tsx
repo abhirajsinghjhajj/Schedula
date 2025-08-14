@@ -28,13 +28,74 @@ export default function VideoConsultationPage() {
   const [sortBy, setSortBy] = useState("rating");
   const [isLoading, setIsLoading] = useState(true);
 
-  // ... (loadDoctors and sorting logic is correct, no changes needed)
+  const loadDoctors = async () => {
+    setIsLoading(true);
+    try {
+      const allDoctors = await doctorsAPI.getAll();
+      setDoctors(allDoctors);
+    } catch (error) {
+      console.error("Failed to load doctors:", error);
+      toast({
+        title: "Error",
+        description: "Failed to load doctors. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSearch = () => {
+    let tempDoctors = [...doctors];
+
+    // Filter by search term
+    if (searchTerm) {
+      tempDoctors = tempDoctors.filter(
+        (doctor) =>
+          doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          doctor.about.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Filter by specialty
+    if (selectedSpecialty !== "all") {
+      tempDoctors = tempDoctors.filter(
+        (doctor) => doctor.specialty.toLowerCase() === selectedSpecialty
+      );
+    }
+
+    // Sort the results
+    switch (sortBy) {
+      case "rating":
+        tempDoctors.sort((a, b) => b.rating - a.rating);
+        break;
+      case "experience":
+        tempDoctors.sort(
+          (a, b) =>
+            parseInt(b.experience.split(" ")[0]) -
+            parseInt(a.experience.split(" ")[0])
+        );
+        break;
+      case "fee":
+        tempDoctors.sort((a, b) => a.videoConsultationFee - b.videoConsultationFee);
+        break;
+      case "name":
+        tempDoctors.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      default:
+        break;
+    }
+
+    setFilteredDoctors(tempDoctors);
+  };
+
   useEffect(() => {
-    // ...
+    loadDoctors();
   }, []);
   
   useEffect(() => {
-    // ...
+    handleSearch();
   }, [searchTerm, selectedSpecialty, sortBy, doctors]);
 
 

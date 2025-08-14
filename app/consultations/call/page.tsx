@@ -15,6 +15,7 @@ import { doctorsAPI, type Doctor } from "@/lib/api";
 import { Phone, Star, Calendar, DollarSign, Clock, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function CallConsultationPage() {
   const { user } = useAuth();
@@ -27,21 +28,95 @@ export default function CallConsultationPage() {
   const [sortBy, setSortBy] = useState("rating");
   const [isLoading, setIsLoading] = useState(true);
 
-  // ... (loadDoctors and sorting logic is correct, no changes needed)
-  useEffect(() => {
-    // ...
-  }, []);
+  const loadDoctors = async () => {
+    setIsLoading(true);
+    try {
+      const allDoctors = await doctorsAPI.getAll();
+      setDoctors(allDoctors);
+    } catch (error) {
+      console.error("Failed to load doctors:", error);
+      toast({
+        title: "Error",
+        description: "Failed to load doctors. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleSearch = () => {
-    // ...
+    let tempDoctors = [...doctors];
+
+    // Filter by search term
+    if (searchTerm) {
+      tempDoctors = tempDoctors.filter(
+        (doctor) =>
+          doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          doctor.about.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Filter by specialty
+    if (selectedSpecialty !== "all") {
+      tempDoctors = tempDoctors.filter(
+        (doctor) => doctor.specialty.toLowerCase() === selectedSpecialty
+      );
+    }
+
+    // Sort the results
+    switch (sortBy) {
+      case "rating":
+        tempDoctors.sort((a, b) => b.rating - a.rating);
+        break;
+      case "experience":
+        tempDoctors.sort(
+          (a, b) =>
+            parseInt(b.experience.split(" ")[0]) -
+            parseInt(a.experience.split(" ")[0])
+        );
+        break;
+      case "fee":
+        tempDoctors.sort((a, b) => a.callConsultationFee - b.callConsultationFee);
+        break;
+      case "name":
+        tempDoctors.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      default:
+        break;
+    }
+
+    setFilteredDoctors(tempDoctors);
   };
 
   useEffect(() => {
-    // ...
+    loadDoctors();
+  }, []);
+
+  useEffect(() => {
+    handleSearch();
   }, [searchTerm, selectedSpecialty, sortBy, doctors]);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className="min-h-screen bg-background">
+        <ModernNavbar />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="space-y-6">
+            <Skeleton className="h-12 w-96 mx-auto" />
+            <Skeleton className="h-6 w-64 mx-auto" />
+            <Skeleton className="h-20 w-full" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {[1, 2, 3, 4].map((i) => (
+                <Skeleton key={i} className="h-48 w-full" />
+              ))}
+            </div>
+          </div>
+        </div>
+        <ModernFooter />
+      </div>
+    );
   }
 
   return (
