@@ -34,21 +34,78 @@ export default function BookingPage() {
   const [bookingComplete, setBookingComplete] = useState(false)
 
   const availableDates = useMemo(() => {
-    // ... (logic is correct, no changes needed)
+    if (!doctor) return [] as { date: string; display: string; dayName: string }[]
+    const result: { date: string; display: string; dayName: string }[] = []
+    const start = new Date()
+    for (let i = 0; i < 14; i += 1) {
+      const d = new Date(start)
+      d.setDate(start.getDate() + i)
+      result.push({
+        date: d.toISOString().split("T")[0],
+        display: d.toLocaleDateString(undefined, { month: "short", day: "numeric" }),
+        dayName: d.toLocaleDateString(undefined, { weekday: "short" }),
+      })
+    }
+    return result
   }, [doctor, consultationType]);
 
-  // ... (useEffect and loadDoctor logic are correct, no changes needed)
+  useEffect(() => {
+    const load = async () => {
+      try {
+        if (!params?.id) return
+        const d = await doctorsAPI.getById(params.id as string)
+        setDoctor(d)
+      } catch (e) {
+        toast({ title: "Error", description: "Failed to load doctor", variant: "destructive" })
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    load()
+  }, [params?.id])
 
   const getConsultationFee = () => {
-    // ... (logic is correct, no changes needed)
+    if (!doctor) return 0
+    if (consultationType === "video") return doctor.videoConsultationFee
+    if (consultationType === "call") return doctor.callConsultationFee ?? doctor.videoConsultationFee
+    return doctor.consultationFee
   };
 
   const handleBookAppointment = async () => {
-    // ... (logic is correct, no changes needed)
+    if (!user) {
+      toast({ title: "Login required", description: "Please login as a patient to continue", variant: "destructive" })
+      router.push("/auth")
+      return
+    }
+    if (!selectedDate || !selectedTime) return
+    setShowPayment(true)
   };
 
   const handlePayment = async () => {
-    // ... (logic is correct, no changes needed)
+    if (!user || !doctor) return
+    try {
+      setIsBooking(true)
+      await appointmentsAPI.create({
+        id: "", // will be set server-side
+        doctorId: doctor.id,
+        patientId: user.id,
+        doctorName: doctor.name,
+        patientName: user.name,
+        specialty: doctor.specialty,
+        date: selectedDate,
+        time: selectedTime,
+        status: "pending",
+        consultationType,
+        symptoms,
+        fee: getConsultationFee(),
+      } as any)
+      setBookingComplete(true)
+      toast({ title: "Booked", description: "Your appointment has been booked" })
+    } catch (e) {
+      toast({ title: "Payment failed", description: "Please try again", variant: "destructive" })
+    } finally {
+      setIsBooking(false)
+    }
   };
 
   if (isLoading) return null; // Let the loading.tsx file handle the initial loading UI

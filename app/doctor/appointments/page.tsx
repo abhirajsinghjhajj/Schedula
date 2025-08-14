@@ -27,11 +27,25 @@ export default function DoctorAppointmentsPage() {
   }, [user]);
 
   const loadAppointments = async () => {
-    // ...
+    try {
+      setIsLoading(true)
+      if (!user) return
+      const data = await appointmentsAPI.getByDoctorId(user.id)
+      setAppointments(data)
+    } catch (e) {
+      toast({ title: "Error", description: "Failed to load appointments", variant: "destructive" })
+    } finally {
+      setIsLoading(false)
+    }
   };
 
   const updateAppointmentStatus = async (appointmentId: string, status: Appointment["status"]) => {
-    // ...
+    try {
+      const updated = await appointmentsAPI.updateStatus(appointmentId, status)
+      setAppointments(prev => prev.map(a => (a.id === appointmentId ? updated : a)))
+    } catch (e) {
+      toast({ title: "Error", description: "Failed to update status", variant: "destructive" })
+    }
   };
   
   // IMPROVEMENT: This function maps a status to a pre-defined badge variant.
